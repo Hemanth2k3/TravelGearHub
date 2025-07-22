@@ -1,5 +1,6 @@
 package com.TravelGearHub.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +45,7 @@ public class User {
     private boolean isOAuthUser = false;
 
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Gear> gears = new ArrayList<>();  // if user is a seller
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
