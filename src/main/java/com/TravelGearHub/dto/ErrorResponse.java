@@ -10,8 +10,6 @@ public class ErrorResponse {
         this.message = message;
         this.timestamp = timestamp;
     }
-
-    // Getters
     public int getStatus() { return status; }
     public String getMessage() { return message; }
     public long getTimestamp() { return timestamp; }
